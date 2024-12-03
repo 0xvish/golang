@@ -32,6 +32,12 @@ func TestHello(t *testing.T) {
 		assertCorrectMesssage(t, got, want)
 	})
 
+	t.Run("in Hindi", func(t *testing.T) {
+		got := Hello("Vish⚡", "Hindi")
+		want := "Namaste, Vish⚡!"
+		assertCorrectMesssage(t, got, want)
+	})
+
 }
 
 // assertCorrectMesssage is a helper function to reduce duplication in our tests
