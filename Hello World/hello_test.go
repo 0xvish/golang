@@ -7,23 +7,31 @@ func TestHello(t *testing.T) {
 
 	// Subtest
 	t.Run("saying hello to people", func(t *testing.T) {
-		got := Hello("Vish⚡")
+		got := Hello("Vish⚡", "")
 		want := "Hello, Vish⚡!"
-
-		if got != want {
-			assertCorrectMesssage(t, got, want)
-		}
+		assertCorrectMesssage(t, got, want)
 	})
 
 	// Subtest
 	t.Run("say 'Hello, World!' when an empty string is supplied", func(t *testing.T) {
-		got:= Hello("")
+		got:= Hello("", "")
 		want:= "Hello, World!"
-
-		if got != want {
-			assertCorrectMesssage(t, got, want)
-		}
+		assertCorrectMesssage(t, got, want)
 	})
+
+	// Subtest
+	t.Run("in Spanish", func(t *testing.T) {
+		got := Hello("Vish⚡", "Spanish")
+		want := "Hola, Vish⚡!"
+		assertCorrectMesssage(t, got, want)
+	})
+
+	t.Run("in French", func(t *testing.T) {
+		got := Hello("Vish⚡", "French")
+		want := "Bonjour, Vish⚡!"
+		assertCorrectMesssage(t, got, want)
+	})
+
 }
 
 // assertCorrectMesssage is a helper function to reduce duplication in our tests
