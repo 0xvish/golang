@@ -44,6 +44,4 @@ func main() {
 	fmt.Println("Miles left: ", myElectricEngine.milesLeft())
 	canMakeIt(myElectricEngine, 100)
 
-
-
 }
